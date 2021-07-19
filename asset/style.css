@@ -1,0 +1,757 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff4e3;
+}
+
+.container {
+  margin: 50px 50px 50px 50px;
+}
+
+/* Header */
+
+.container header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: justify;
+}
+.container header nav h2 {
+  font-family: "Roboto Slab", serif;
+}
+
+.container header nav ul {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 25%;
+  align-items: center;
+}
+
+.container header nav ul li a {
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.container header nav ul li a:hover {
+  color: #ffa45c;
+}
+
+.container header nav ul button {
+  width: 80px;
+  padding: 5px 5px;
+  border: 2px solid #ffa45c;
+  background-color: transparent;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container header nav ul button:hover {
+  background-color: #ffa45c;
+  color: #ffff;
+}
+
+/* *Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+nav .burger input {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  left: -8px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+nav .burger span {
+  display: block;
+  background-color: black;
+  width: 28px;
+  height: 3px;
+  transition: all 0.5s;
+}
+
+nav .burger span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+nav .burger input:checked ~ span:nth-child(2) {
+  background-color: black;
+  transform: rotate(45deg) translate(5px, -10px);
+}
+
+nav .burger span:nth-child(2) {
+  transform-origin: 0 100%;
+}
+nav .burger input:checked ~ span:nth-child(4) {
+  background-color: black;
+  transform: rotate(-45deg) translate(20px, -10px);
+}
+nav .burger input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Todo JumboTron */
+
+.container .jumbotron {
+  background: url("../img/view4.jpg");
+  width: 100%;
+  border-radius: 10px;
+  height: 550px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 1%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+}
+
+.container .jumbotron .subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container .jumbotron img {
+  width: 20px;
+}
+.container .jumbotron .body-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* !Form Booking */
+
+.container .jumbotron .body-content .form-body {
+  top: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+  position: absolute;
+}
+
+.card-3 {
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
+  padding: 30px 60px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.container .jumbotron .body-content .form-body button {
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffa45c;
+  font-weight: bolder;
+  cursor: pointer;
+  color: white;
+}
+.container .jumbotron .body-content .form-body h2 {
+  color: black;
+}
+
+.container .jumbotron .body-content .form-body input[type="search"] {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.container .jumbotron .body-content .form-body input[type="search"]:focus {
+  outline: none;
+}
+
+.container .jumbotron .body-content .form-body input[type="date"] {
+  border: none;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+.container .jumbotron .body-content .form-body input[type="date"]:focus {
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+/* !Category */
+
+main article .catogory {
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+}
+
+main article .catogory h1 {
+  font-size: 2.5em;
+  font-weight: bolder;
+}
+main article .catogory p {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+main article .list-services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+main article .list-services .content-card {
+  text-align: center;
+  flex-basis: 20%;
+}
+
+main article .list-services .header-card img {
+  max-width: 60px;
+}
+main article .list-services .body-card,
+p {
+  padding-top: 15px;
+}
+
+/* ?Best Destination */
+
+main article .best-destinations p {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+main article .best-destinations h1 {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+main article .content-destinations {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "content1 content2 content3 content4 content4 content5"
+    "content1 content6 content7 content8 content9 content9";
+}
+
+main article .content-destinations .content1 {
+  grid-area: content1;
+  background: url("../img/bali.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content1:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content2 {
+  grid-area: content2;
+  background: url("../img/padar-island.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+main article .content-destinations .content2:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content3 {
+  grid-area: content3;
+  background: url("../img/aling-waterfall.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content3:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content4 {
+  grid-area: content4;
+  background: url("../img/bromo.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content4:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content5 {
+  grid-area: content5;
+  background: url("../img/raja-ampat.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content5:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content6 {
+  grid-area: content6;
+  background: url("../img/nusa-dua-beach.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content6:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content7 {
+  grid-area: content7;
+  background: url("../img/mounth-rinjani.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content7:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content8 {
+  grid-area: content8;
+  background: url("../img/kawah-ijen.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content8:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content9 {
+  grid-area: content9;
+  background-image: url("../img/keliking-beach.jpg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 80px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+main article .content-destinations .content9:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: all 0.5s;
+}
+
+.best-destinations {
+  text-align: center;
+  margin-bottom: 100px;
+  font-family: "Roboto Slab", serif;
+}
+
+/* ?Easy Trvel */
+
+main article .easy-trevel-header {
+  font-family: "Roboto Slab", serif;
+}
+
+main article .easy-trevel-header p {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+main article .easy-trevel-header h1 {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+main article .easy-trevel-header {
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+main article .step-trevel {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+main article .step-trevel .header-title {
+  padding-bottom: 50px;
+}
+main article .step-trevel .info-step {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+main article .step-trevel .step-info-header img {
+  max-width: 50px;
+}
+
+main article .step-trevel .step-info-subtitle {
+  padding: 10px;
+}
+
+/* Header-testi */
+
+main article .header-testi {
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+}
+
+main article .header-testi p {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+main article .header-testi h1 {
+  font-size: 2em;
+  font-weight: 800;
+}
+main article .header-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+main article .header-img img {
+  max-width: 20%;
+  flex: 25%;
+  padding: 10px 10px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+aside .profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+aside .profile img {
+  max-width: 400px;
+}
+
+/* *Footer */
+footer {
+  text-align: center;
+}
+
+footer hr {
+  opacity: 0.8;
+}
+
+/* !media query */
+/* !Handphone */
+@media (max-width: 576px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+  }
+  .container header nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  /* *Burger */
+  .burger {
+    display: flex;
+    margin-left: 0px;
+  }
+  nav ul {
+    position: absolute;
+    background-color: #ffcdab;
+    flex-direction: column;
+    align-items: center;
+    right: 50px;
+    top: 70px;
+    height: 50vh;
+    width: 75%;
+    border-radius: 5px;
+    z-index: 0;
+    transform: translateY(-100px);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .container .jumbotron .body-content {
+    display: none;
+  }
+  main article .list-services {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  main article .content-destinations {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  main article .step-trevel {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  main article .step-trevel .aside-img img {
+    max-width: 400px;
+  }
+  main article .header-img img {
+    max-width: 50%;
+  }
+}
+
+/* !Tablet */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+  }
+  .container header nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  /* *Burger */
+  .burger {
+    display: flex;
+    margin-left: 0px;
+  }
+  nav ul {
+    position: absolute;
+    background-color: #ffcdab;
+    flex-direction: column;
+    align-items: center;
+    right: 50px;
+    top: 70px;
+    height: 50vh;
+    width: 75%;
+    border-radius: 5px;
+    z-index: 0;
+    transform: translateY(-100px);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .container .jumbotron .body-content {
+    display: none;
+  }
+  main article .list-services {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  main article .content-destinations img,
+  h4,
+  h3 {
+    display: none;
+  }
+  main article .step-trevel {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  main article .header-img img {
+    max-width: 50%;
+  }
+}
+
+/* !Laptop */
+@media (max-width: 1024px) {
+  .container header nav ul {
+    width: 50%;
+  }
+
+  .container .jumbotron .body-content .form-body {
+    width: 80%;
+  }
+}
+
+/* !Laptop &Desktop */
+
+@media (max-width: 1440px) {
+  .container header nav ul {
+    width: 30%;
+  }
+
+  .container .jumbotron .body-content .form-body {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* !Global */
+.pd-top1 {
+  margin-top: 50px;
+}
+
+.pd-top2 {
+  margin-top: 100px;
+}
+
+.pd-top3 {
+  margin-top: 150px;
+}
+
+.img-content-destinations {
+  max-width: 25px;
+}
+
+.double-4 {
+  flex-basis: 40%;
+}
+
+.card {
+  background-color: #fff4e3;
+  padding: 20px 20px 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
+}
+
+.card-1 {
+  background-color: #fff4e3;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.card-2 {
+  background-color: #fff4e3;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.mt-100 {
+  margin-bottom: 100px;
+}
+
+.mb-150 {
+  margin-bottom: 150px;
+}
+
+.active-link {
+  color: #ffa45c;
+  font-weight: 800;
+}
+
+.unactive-link {
+  color: #5d5d5a;
+  font-weight: 500;
+}
+/* ! */
